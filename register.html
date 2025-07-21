@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        /* 简单样式美化，可根据需求自定义 */
+        form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 表单结构 -->
+    <form onsubmit="return checkForm(event)">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" id="username" name="username" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td>Email：</td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="password" id="password" name="password" required oninput="validatePassword()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div id="passwordError" class="error-message">密码必须至少8个字符以上</div></td>
+            </tr>
+            <tr>
+                <td>确认密码：</td>
+                <td><input type="password" id="confirmPassword" name="confirmPassword" required oninput="comparePasswords()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div id="confirmPasswordError" class="error-message">两次输入的密码不一致</div></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">注册</button>
+                </td>
+
+        </table>
+
+        <!-- <label for="username">用户名：</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email：</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required oninput="validatePassword()">
+        <div id="passwordError" class="error-message">密码必须至少8个字符以上</div>
+
+        <label for="confirmPassword">确认密码：</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required oninput="comparePasswords()">
+        <div id="confirmPasswordError" class="error-message">两次输入的密码不一致</div> -->
+
+        <!-- <button type="submit">注册</button> -->
+    </form>
+
+    <script>
+        function checkForm(event) {
+            // 阻止表单默认提交行为（先验证再决定是否提交）
+            event.preventDefault();
+            
+            // 获取密码输入框的值
+            const password = document.getElementById('password').value;
+            
+            // 检查密码长度
+            if (password.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                return false; // 阻止表单提交
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+
+            // 检查两次密码是否一致
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                return false; // 阻止表单提交
+            } else {
+                document.getElementById('confirmPasswordError').style.display = 'none';
+            }
+
+            // 如果验证通过，可在此处添加 AJAX 提交逻辑（或其他处理）
+            alert('验证通过，可提交表单');
+            // 手动提交表单（若需要真正提交到服务器，需配置 form 的 action 和 method）
+            event.target.submit();
+            return true;
+        }
+
+        // 实时验证密码长度
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            if (password.length < 8 && password.length > 0) {
+                document.getElementById('passwordError').style.display = 'block';
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+                // 密码长度满足后，检查确认密码
+                comparePasswords();
+            }
+        }
+
+        // 实时比较两次输入的密码
+        function comparePasswords() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (confirmPassword.length > 0) {
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPasswordError').style.display = 'block';
+                } else {
+                    document.getElementById('confirmPasswordError').style.display = 'none';
+                }
+            } else {
+                document.getElementById('confirmPasswordError').style.display = 'none';
+            }
+        }
+    </script>
+
+    <div id="copyright">© 2023 My Training. All rights reserved.</div>
+</body>
+</html>

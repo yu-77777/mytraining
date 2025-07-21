@@ -5,8 +5,35 @@
        <meta name="viewport" content="width=device-width, intial-scale=1.0">
        <title>Mia homepage</title>
        <link rel="stylesheet" href="style.css">
+       <script>
+
+        // window.onload = function(){
+        //     document.body.style.backgroundColor = "grey";
+        // } 页面加载完成后执行 JavaScript 代码 如果多次赋值，只有最后一个函数会被执行。
+
+
+        alert("alert message");
+        let col = prompt("please enter the color")
+
+
+        function myFunction(){
+            document.body.style.backgroundColor = "grey";
+        }
+       </script>
+
+
+
+
     </head>
-    <body>
+    <body onload="myFunction">
+        <a href="register.html">user regisiter</a>
+        <img src = "images/img1.webp" height="200" width="300">
+
+        <!-- <img id="terro" src="images/img1.webp" 
+        style="height:200px;width:300;">
+        alt="image 1" -->
+        
+
         <header>
             <div class="container">
                 <h1>hello, i'm john doe</h1>

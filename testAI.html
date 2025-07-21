@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; }
+        .container { max-width: 500px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
+        label { display: block; margin-top: 16px; font-weight: bold; }
+        input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 4px; }
+        .gender, .hobbies { margin-top: 8px; }
+        .hobbies label { display: inline-block; margin-right: 12px; font-weight: normal; }
+        .gender label { display: inline-block; margin-right: 16px; font-weight: normal; }
+        button { margin-top: 24px; padding: 10px 24px; background: #0078d4; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #005fa3; }
+        .error { color: red; font-size: 0.95em; margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Information Form</h2>
+        <form id="userForm" autocomplete="off" novalidate>
+            <label for="name">Name<span style="color:red">*</span></label>
+            <input type="text" id="name" name="name" required>
+            <div id="nameError" class="error"></div>
+
+            <label for="age">Age<span style="color:red">*</span></label>
+            <input type="number" id="age" name="age" required min="10" max="100">
+            <div id="ageError" class="error"></div>
+
+            <label>Gender<span style="color:red">*</span></label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" value="Other"> Other</label>
+            </div>
+            <div id="genderError" class="error"></div>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+
+            <label for="city">City</label>
+            <select id="city" name="city">
+                <option value="">--Select City--</option>
+                <option value="Beijing">Beijing</option>
+                <option value="Shanghai">Shanghai</option>
+                <option value="Guangzhou">Guangzhou</option>
+                <option value="Shenzhen">Shenzhen</option>
+                <option value="Chengdu">Chengdu</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="zipcode">Zip Code</label>
+            <input type="text" id="zipcode" name="zipcode" maxlength="6" pattern="\d{6}">
+            <div id="zipError" class="error"></div>
+
+            <label>Hobbies</label>
+            <div class="hobbies">
+                <label><input type="checkbox" name="hobbies" value="Watching Movies"> Watching Movies</label>
+                <label><input type="checkbox" name="hobbies" value="Singing"> Singing</label>
+                <label><input type="checkbox" name="hobbies" value="Listening Music"> Listening Music</label>
+                <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+                <label><input type="checkbox" name="hobbies" value="Outdoor Sports"> Outdoor Sports</label>
+                <label><input type="checkbox" name="hobbies" value="Indoor Sports"> Indoor Sports</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(e) {
+            let valid = true;
+            // Name validation
+            const name = document.getElementById('name').value.trim();
+            document.getElementById('nameError').textContent = name ? '' : 'Name is required.';
+            if (!name) valid = false;
+
+            // Age validation
+            const age = document.getElementById('age').value;
+            if (!age || isNaN(age) || age < 10 || age > 100) {
+                document.getElementById('ageError').textContent = 'Age must be a number between 10 and 100.';
+                valid = false;
+            } else {
+                document.getElementById('ageError').textContent = '';
+            }
+
+            // Gender validation
+            const gender = document.querySelector('input[name="gender"]:checked');
+            document.getElementById('genderError').textContent = gender ? '' : 'Please select your gender.';
+            if (!gender) valid = false;
+
+            // Zip code validation
+            const zip = document.getElementById('zipcode').value.trim();
+            if (zip && !/^\d{6}$/.test(zip)) {
+                document.getElementById('zipError').textContent = 'Zip code must be 6 digits.';
+                valid = false;
+            } else {
+                document.getElementById('zipError').textContent = '';
+            }
+
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+    
+    <div id="copyright">© 2023 My Training. All rights reserved.</div>
+</body>
+</html>
