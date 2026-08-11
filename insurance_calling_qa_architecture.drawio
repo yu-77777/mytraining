@@ -1,0 +1,164 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
+  <diagram id="insurance-calling-qa-overall" name="Overall Architecture">
+    <mxGraphModel dx="1990" dy="1095" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2700" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Insurance Calling QA System" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#0B1F33;fontFamily=Arial;fontSize=34;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="24" width="2500" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="AI-assisted post-call validity analysis  |  from duration-only compliance to evidence-based conversation quality" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#425466;fontFamily=Arial;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="42" y="80" width="2500" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="BUSINESS CONTEXT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3F6F9;strokeColor=#9AA9B8;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=15;fontStyle=1;verticalAlign=top;spacingTop=16;" parent="1" vertex="1">
+          <mxGeometry x="40" y="142" width="280" height="930" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="INSURANCE CALLBACKS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0B1F33;strokeColor=#0B1F33;fontColor=#FFFFFF;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=16;" parent="1" vertex="1">
+          <mxGeometry x="64" y="210" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="HARD KPI: CALL DURATION &gt; 90 SEC" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C62828;strokeColor=#C62828;fontColor=#FFFFFF;fontFamily=Arial;fontSize=15;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="64" y="315" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="LONG BUT EMPTY" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CDD6DF;strokeWidth=1.5;fontColor=#0B1F33;fontFamily=Arial;fontSize=17;fontStyle=1;align=left;verticalAlign=top;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="60" y="410" width="240" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="13d" value="&amp;gt; 90 sec, but no meaningful&amp;nbsp;&lt;div&gt;business information.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontColor=#425466;fontFamily=Arial;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="64" y="470" width="212" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="SHORT BUT VALID" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#CDD6DF;strokeWidth=1.5;fontColor=#0B1F33;fontFamily=Arial;fontSize=17;fontStyle=1;align=left;verticalAlign=top;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="60" y="555" width="240" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="14d" value="&lt; 90 sec, but key information is present." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontColor=#425466;fontFamily=Arial;fontSize=13;" parent="1" vertex="1">
+          <mxGeometry x="64" y="605" width="212" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="THE SHIFT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DFF6F3;strokeColor=#178F8A;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=17;fontStyle=1;align=left;verticalAlign=top;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="50" y="770" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="15d" value="Duration gate  →&lt;div&gt;Evidence-based&amp;nbsp;&lt;/div&gt;&lt;div&gt;validity&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontColor=#096B65;fontFamily=Arial;fontSize=20;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="64" y="810" width="212" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="OVERALL ARCHITECTURE  ·  ASYNCHRONOUS POST-CALL PIPELINE" style="swimlane;html=1;rounded=0;horizontal=1;startSize=38;fillColor=#FFFFFF;strokeColor=#66788A;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=15;fontStyle=1;align=left;spacingLeft=16;" parent="1" vertex="1">
+          <mxGeometry x="350" y="142" width="2190" height="930" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="APPLICATION &amp; CONTROL PLANE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#8EB1DD;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#144B82;fontFamily=Arial;fontSize=13;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=12;" parent="1" vertex="1">
+          <mxGeometry x="375" y="208" width="2138" height="214" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="AI PIPELINE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F4EEFF;strokeColor=#B494DB;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#5A2B91;fontFamily=Arial;fontSize=13;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=12;" parent="1" vertex="1">
+          <mxGeometry x="375" y="442" width="2138" height="244" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="EVIDENCE &amp; DELIVERY PLANE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EAF9F5;strokeColor=#77C7B3;strokeWidth=1.5;dashed=1;dashPattern=3 3;fontColor=#086C5F;fontFamily=Arial;fontSize=13;fontStyle=1;align=left;verticalAlign=middle;spacingLeft=12;" parent="1" vertex="1">
+          <mxGeometry x="375" y="706" width="2138" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="ANALYST WEB UI&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#425466&#39;&gt;Upload · queue · review&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82C4;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="410" y="210" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="CALL CENTER API&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#425466&#39;&gt;Service auth · idempotency&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82C4;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="410" y="328" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="FASTIFY API&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#144B82&#39;&gt;Auth · roles · CSRF · audit&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCEBFF;strokeColor=#145DA0;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="660" y="259" width="190" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="INGESTION SERVICE&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#144B82&#39;&gt;Validate · probe · hash · reserve&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCEBFF;strokeColor=#145DA0;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="980" y="249" width="220" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="DURABLE STATE&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#144B82&#39;&gt;Audio store · SQLite metadata&lt;br/&gt;calls · transcripts · reports · audit&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCEBFF;strokeColor=#145DA0;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1320" y="239" width="240" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="DB-BACKED QUEUE&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#144B82&#39;&gt;Lease · heartbeat · retry · recovery&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCEBFF;strokeColor=#145DA0;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1660" y="235" width="220" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="FIXED ARTIFACTS&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#144B82&#39;&gt;Provider · prompt · ruleset · schema&lt;br/&gt;Version and hash pinned per job&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F6FF;strokeColor=#3B82C4;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="2010" y="230" width="420" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="WORKER SERVICE&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#5A2B91&#39;&gt;Lease job · concurrency · retry&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8D9FF;strokeColor=#7136A8;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="660" y="500" width="360" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="&amp;nbsp;ASR&amp;nbsp;&lt;br&gt;&lt;font style=&quot;font-size: 13px; color: rgb(122, 77, 8);&quot;&gt;gemini-3.5-flash&amp;nbsp;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF0CF;strokeColor=#C88719;strokeWidth=2;dashed=1;dashPattern=6 4;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="500" width="330" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="CANONICAL TRANSCRIPT&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#5A2B91&#39;&gt;Normalized text + segments&lt;br/&gt;Speaker attribution: unavailable&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8D9FF;strokeColor=#7136A8;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1560" y="500" width="300" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="INTERNAL LLM&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#7A4D08&#39;&gt;Prompt + ruleset + JSON schema&lt;br/&gt;Structured candidate output&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF0CF;strokeColor=#C88719;strokeWidth=2;dashed=1;dashPattern=6 4;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="2040" y="500" width="420" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="VALIDITY / QA ANALYSIS&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#086C5F&#39;&gt;Schema validation · rubric evaluation&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CFF4EA;strokeColor=#0E8A78;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="660" y="750" width="310" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="EVIDENCE POLICY&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#086C5F&#39;&gt;Exact quote · segment match · outcome&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CFF4EA;strokeColor=#0E8A78;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1110" y="740" width="280" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="52" value="CANONICAL REPORT&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#086C5F&#39;&gt;JSON · hash · provenance · TTL&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CFF4EA;strokeColor=#0E8A78;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="1570" y="740" width="270" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="ANALYST REVIEW WORKBENCH&lt;br/&gt;&lt;font style=&#39;font-size:13px;color:#086C5F&#39;&gt;Audio · transcript · findings · exports&lt;br/&gt;Human review required&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CFF4EA;strokeColor=#0E8A78;strokeWidth=2;fontColor=#0B1F33;fontFamily=Arial;fontSize=18;fontStyle=1;align=left;verticalAlign=middle;spacing=14;" parent="1" vertex="1">
+          <mxGeometry x="2010" y="740" width="450" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="60" value="GUARDRAILS  ·  DATA BOUNDARY  ·  PRIVATE / ALLOWLISTED TRANSPORT  ·  SAFE LOGGING  ·  RETENTION  ·  RECONCILIATION  ·  AUDIT TRAIL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0B1F33;strokeColor=#0B1F33;strokeWidth=2;fontColor=#FFFFFF;fontFamily=Arial;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="800" y="954" width="1660" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#145DA0;strokeWidth=2;endArrow=block;endFill=1;" parent="1" source="30" target="32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#145DA0;strokeWidth=2;endArrow=block;endFill=1;" parent="1" source="31" target="32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" value="audio + metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#145DA0;strokeWidth=2;endArrow=block;endFill=1;fontColor=#144B82;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;fillColor=none;" parent="1" source="32" target="33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" value="validated call" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#145DA0;strokeWidth=2;endArrow=block;endFill=1;fontColor=#144B82;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="33" target="34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" value="queue job" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#145DA0;strokeWidth=2;endArrow=block;endFill=1;fontColor=#144B82;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="34" target="35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" value="pinned config" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3B82C4;strokeWidth=1.5;dashed=1;endArrow=open;endFill=0;fontColor=#144B82;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="36" target="35" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;lease&lt;/font&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7136A8;strokeWidth=2;endArrow=block;endFill=1;fontColor=#5A2B91;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="35" target="40" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1770" y="430" />
+              <mxPoint x="980" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e40" value="audio bytes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7136A8;strokeWidth=2;endArrow=block;endFill=1;fontColor=#5A2B91;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="40" target="41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e41" value="transcript JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7136A8;strokeWidth=2;endArrow=block;endFill=1;fontColor=#5A2B91;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="41" target="42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" value="untrusted transcript" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7136A8;strokeWidth=2;endArrow=block;endFill=1;fontColor=#5A2B91;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="42" target="43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e43" value="candidate JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E8A78;strokeWidth=2;endArrow=block;endFill=1;fontColor=#086C5F;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="43" target="50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2250" y="700" />
+              <mxPoint x="855" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e50" value="validated findings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E8A78;strokeWidth=2;endArrow=block;endFill=1;fontColor=#086C5F;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="50" target="51" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e51" value="outcome + evidence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E8A78;strokeWidth=2;endArrow=block;endFill=1;fontColor=#086C5F;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="51" target="52" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e52" value="JSON / HTML / CSV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0E8A78;strokeWidth=2;endArrow=block;endFill=1;fontColor=#086C5F;fontFamily=Arial;fontSize=12;labelBackgroundColor=#FFFFFF;" parent="1" source="52" target="53" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#66788A;strokeWidth=1.5;dashed=1;endArrow=open;endFill=0;" parent="1" source="60" target="40" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1630" y="920" />
+              <mxPoint x="620" y="920" />
+              <mxPoint x="620" y="573" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
